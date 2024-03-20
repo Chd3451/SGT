@@ -7,7 +7,7 @@
         protected function Conexion(){
             try {
                 //Local
-				$conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=andercode_helpdesk1","root","");
+				$conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=bdtickets","root","");
                 //Produccion
                 //$conectar = $this->dbh = new PDO("mysql:host=localhost;dbname=andercode_helpdesk1","andercode","contraseña");
 				return $conectar;
@@ -23,7 +23,7 @@
 
         public static function ruta(){
             //Local
-			return "http://localhost:90/PERSONAL_HelpDesk/";
+			return "http://localhost:80/SGT/";
             //Produccion
             //return "http://helpdesk.anderson-bastidas.com/";
 		}
