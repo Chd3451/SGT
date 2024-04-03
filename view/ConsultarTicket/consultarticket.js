@@ -125,7 +125,7 @@ $(document).ready(function(){
 });
 
 function ver(tick_id){
-    window.open('http://localhost:90/PERSONAL_HelpDesk/view/DetalleTicket/?ID='+ tick_id +'');
+    window.open('http://localhost:80/STG/view/DetalleTicket/?ID='+ tick_id +'');
 }
 
 function asignar(tick_id){
@@ -182,7 +182,7 @@ function CambiarEstado(tick_id){
             $('#ticket_data').DataTable().ajax.reload();	
 
             swal({
-                title: "HelpDesk!",
+                title: "HelpDesk!", 
                 text: "Ticket Abierto.",
                 type: "success",
                 confirmButtonClass: "btn-success"

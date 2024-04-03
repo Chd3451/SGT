@@ -1,4 +1,4 @@
-<header class="site-header">
+<header class="site-header bg-dark">
     <div class="container-fluid">
 
         <a href="#" class="site-logo">

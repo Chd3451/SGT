@@ -1,32 +1,35 @@
 <?php
-    session_start();
+session_start();
 
-    class Conectar{
-        protected $dbh;
+class Conectar{
+    protected $dbh;
 
-        protected function Conexion(){
-            try {
-                //Local
-				$conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=bdtickets","root","");
-                //Produccion
-                //$conectar = $this->dbh = new PDO("mysql:host=localhost;dbname=andercode_helpdesk1","andercode","contraseña");
-				return $conectar;
-			} catch (Exception $e) {
-				print "¡Error BD!: " . $e->getMessage() . "<br/>";
-				die();
-			}
+    public function Conexion(){
+        try {
+            // Local connection
+            $conectar = $this->dbh = new PDO("mysql:host=localhost;port=3307;dbname=dbtest", "root", "1234");
+            // Set PDO error mode to exception
+            $conectar->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $conectar;
+        } catch (Exception $e) {
+            print "¡Error BD!: " . $e->getMessage() . "<br/>";
+            die();
         }
-
-        public function set_names(){
-			return $this->dbh->query("SET NAMES 'utf8'");
-        }
-
-        public static function ruta(){
-            //Local
-			return "http://localhost:80/SGT/";
-            //Produccion
-            //return "http://helpdesk.anderson-bastidas.com/";
-		}
-
     }
+
+    public function set_names(){
+        return $this->dbh->query("SET NAMES 'utf8'");
+    }
+
+    public static function ruta(){
+        // Local
+        return "http://localhost:80/SGT/";
+        
+    }
+}
+
+// Create a new instance of the Conectar class
+$conexion = new Conectar();
+// Call the Conexion method to establish the database connection
+$conexion->Conexion();
 ?>
