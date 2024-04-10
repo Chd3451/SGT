@@ -164,7 +164,7 @@ function guardar(e){
 
 function CambiarEstado(tick_id){
     swal({
-        title: "HelpDesk",
+        title: "SGT",
         text: "Esta seguro de Reabrir el Ticket?",
         type: "warning",
         showCancelButton: true,
@@ -182,7 +182,7 @@ function CambiarEstado(tick_id){
             $('#ticket_data').DataTable().ajax.reload();	
 
             swal({
-                title: "HelpDesk!", 
+                title: "SGT", 
                 text: "Ticket Abierto.",
                 type: "success",
                 confirmButtonClass: "btn-success"
